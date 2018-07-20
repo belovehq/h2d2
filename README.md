@@ -1,5 +1,7 @@
 # H2-D2
 
+[![Clojars Project](https://img.shields.io/clojars/v/h2d2.svg)](https://clojars.org/h2d2)
+
 H2 driven data visualisation droid for Clojure data scientists. 
 
 H2D2 loads files, urls, core.matrix datasets/matrices and clojure data 

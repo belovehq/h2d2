@@ -4,10 +4,10 @@
   :license {:name "MIT License"
             :url  "https://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.9.0"]
-                 [com.h2database/h2 "1.4.195"]
-                 [org.clojure/java.jdbc "0.7.5"]
-                 [net.mikera/vectorz-clj "0.47.0"]
+                 [com.h2database/h2 "1.4.197"]
+                 [org.clojure/java.jdbc "0.7.7"]
                  [net.mikera/core.matrix "0.62.0"]]
   :source-paths ["src"]
   :test-paths ["test"]
-  :profiles {:dev {:resource-paths ["testresources"]}})
+  :profiles {:dev {:resource-paths ["testresources"]
+                   :dependencies [[net.mikera/vectorz-clj "0.47.0"]]}})

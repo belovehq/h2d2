@@ -1,6 +1,4 @@
-(ns h2d2.tcp
-  (:require [clojure.java.jdbc :as j])
-  (:import org.h2.tools.Server))
+(ns h2d2.tcp)
 
 
 ; not used for atomic change but as a simple container for the tcp server,

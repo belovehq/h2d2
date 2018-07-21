@@ -50,7 +50,7 @@ Import the `h2d2` function in your current namespace:
 (use '[h2d2.main :only [h2d2]])
 ```
 
-H2D2 will create it's own in-memory database (called `H2D2`), which will reside in / 
+H2D2 will create its own in-memory database (called `H2D2`), which will reside in / 
 be served from your REPL process; so closing the REPL will destroy the database. 
 
 Give a thought to what port your SQL GUI and H2D2's database will use 

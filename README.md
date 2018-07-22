@@ -1,8 +1,6 @@
 # H2-D2
 
-[![Clojars Project](https://img.shields.io/clojars/v/h2d2.svg)](https://clojars.org/h2d2)
-
-H2 driven data visualisation droid for Clojure data scientists. 
+H2 driven table vizualisation droid for Clojure data scientists. 
 
 H2D2 loads files, urls, core.matrix datasets/matrices and clojure data 
 structures into an in-memory H2 database, for visualisation via your 
@@ -16,7 +14,7 @@ SQL benefits such as sorting and filtering/querying.
 
 Once you've configured your SQL GUI to point to H2D2's database 
 (which you just have to do once and for all), viewing a dataset 
-is a straightforward as typing:
+is as straightforward as typing:
 
 ```clojure
     (h2d2 "mydata.csv")
@@ -37,6 +35,10 @@ before I give it a stable release version number.
 
 
 ## Installation
+
+[![Clojars Project](https://img.shields.io/clojars/v/h2d2.svg)](https://clojars.org/h2d2)
+
+
 
 Add the H2D2 library to your `~/lein/profiles.clj` or to your `project.clj`:
 
@@ -116,10 +118,16 @@ back in your REPL environment with the command:
 H2D2 is all about database side-effects, and it is very much shell-like and imperative 
 in style rather than functional. 
 
-It's arguments are slightly different for CSV files and for Clojure data structures.
+Its arguments are slightly different for CSV files and for Clojure data structures.
 
 
 ### CSV files
+
+H2D2 only needs the name or URL of the file to view (+ a list of 
+column names if and only if the file has no header). 
+All other arguments are optional (table name, separator, 
+comment marker, charset, port). If the table name is not given, the table 
+will be automatically named `DATASET1` `2` `3`...
 
 H2D2 uses H2's built-in CSV import facilities and therefore 
 follows the way H2 does things.
@@ -154,6 +162,11 @@ file as data; if not then H2D2 will interpret the first row of the
 file as header.  
 
 ### Clojure data structures
+
+H2D2 only needs to be passed the data structure to view.
+All other arguments are optional (table name, column names, data type,
+charset, port). If the table name is not given, the table 
+will be automatically named `DATASET1` `2` `3`...
 
 H2D2 transforms matrices and data structures into `core.matrix` datasets before 
 uploading them into H2. H2D2's behaviour (e.g. default column naming) will 
@@ -300,7 +313,7 @@ will attempt to delete any table that has this name already).
 * Calls are not synchronised, so two threads can run these functions simultaneously.
 
 * You'll need to write your own SQL to query your H2 database and the new tables. 
-  The `h2d2` function only works with the H2D2 in-memory database.
+  The `h2d2` accessory functions only work with the H2D2 in-memory database.
 
 ```clojure
 

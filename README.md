@@ -1,9 +1,9 @@
 # H2-D2
 
-H2 driven table vizualisation droid for Clojure data scientists. 
+H2 driven table vizualisation droid for the Clojure REPL. 
 
-H2D2 loads files, urls, core.matrix datasets/matrices and clojure data 
-structures into an in-memory H2 database, for visualisation via your 
+H2D2 is a REPL utility that loads files, urls, core.matrix datasets/matrices 
+and clojure data structures into an in-memory H2 database, for visualisation via your 
 favourite SQL GUI.
 
 H2D2 was developed with fully-featured IDEs in mind (e.g. IntelliJ IDEA) 
@@ -29,7 +29,7 @@ H2D2 also provides utility functions to import CSV files and Clojure data struct
 
 ## Release Status
 
-H2D2 is production ready and I'm inviting you to use the snapshot version 
+H2D2 is ready to use and I'm inviting you to install the snapshot version 
 and let me know how it goes. I'll use H2D2 a bit more and will write a few more tests 
 before I give it a stable release version number.
 
@@ -345,23 +345,19 @@ will attempt to delete any table that has this name already).
 
 ## License
 
-Copyright © 2018 Nicolas Duchenne, Belove Ltd, London, UK
-
-Released under the [MIT License](https://opensource.org/licenses/MIT).
-
 The Software includes copies of the following licensed datasets, which are 
 used to test the Software and are located in the `testresources` directory:
 
 * [Traffic enforcement cameras.csv](https://data.gov.uk/dataset/cctv-traffic-enforcement-camera-locations)
-
-  Copyright © Crown Copyright, licensed under the 
-[Open Government Licence v3.0](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
-
-  copied 30 March 2018
+ Copyright © Crown Copyright, licensed under the 
+[Open Government Licence v3.0](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/),
+ copied 30 March 2018
 
 * [artist_data.csv](https://github.com/tategallery/collection/blob/master/artist_data.csv)
+Copyright (c) Tate, licensed under the 
+[Creative Commons Zero 1.0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/),
+copied 30 March 2018
 
-  Copyright (c) Tate, licensed under the 
-[Creative Commons Zero 1.0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/)
+Copyright © 2018 Nicolas Duchenne, [Belove Ltd, London, UK](https://www.belove.co.uk)
 
-  copied 30 March 2018
+Released under the [MIT License](https://opensource.org/licenses/MIT).

@@ -17,17 +17,17 @@
     ;start and check status
     (is (= org.h2.tools.Server (class (tcp/start! nil))))
     (is (let [{:keys [status port]} (tcp/status)]
-          (and (= status :started) (int? port))))
+          (and (= status :started) (integer? port))))
     ; stop and check same port
     (is (let [{oldport :port} (tcp/status)
               _ (tcp/stop!)
               {:keys [status port]} (tcp/status)]
-          (and (= status :stopped) (int? port) (= oldport port))))
+          (and (= status :stopped) (integer? port) (= oldport port))))
     ; start and check same port
     (is (let [{oldport :port} (tcp/status)
               _ (tcp/start! nil)
               {:keys [status port]} (tcp/status)]
-          (and (= status :started) (int? port) (= oldport port))))
+          (and (= status :started) (integer? port) (= oldport port))))
     ; stop and restart on a set port
     (is (let [_ (tcp/stop!)
               _ (tcp/start! 58641)
@@ -45,12 +45,12 @@
     (is (let [{oldport :port} (tcp/status)
               _ (tcp/stop!)
               {:keys [status port]} (tcp/status)]
-          (and (= status :stopped) (int? port) (= oldport port))))
+          (and (= status :stopped) (integer? port) (= oldport port))))
     ; stop again and check same port
     (is (let [{oldport :port} (tcp/status)
               _ (tcp/stop!)
               {:keys [status port]} (tcp/status)]
-          (and (= status :stopped) (int? port) (= oldport port))))
+          (and (= status :stopped) (integer? port) (= oldport port))))
     ))
 
 (deftest h2d2-function
@@ -62,7 +62,7 @@
     ;start
     (is (let [msg (h2d2 :tcp :start)
               {port :port} (tcp/status)]
-          (and (int? port)
+          (and (integer? port)
                (= msg (str "The database is closed. The TCP server is running on port "
                            port ".")))))
     ; stop and check same port

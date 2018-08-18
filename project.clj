@@ -10,4 +10,5 @@
   :source-paths ["src"]
   :test-paths ["test"]
   :profiles {:dev {:resource-paths ["testresources"]
-                   :dependencies [[net.mikera/vectorz-clj "0.47.0"]]}})
+                   :dependencies [[net.mikera/vectorz-clj "0.47.0"]]}
+             :1.8 {:dependencies [[org.clojure/clojure "1.8.0"]]}})

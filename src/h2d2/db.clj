@@ -36,7 +36,7 @@
 (defn select-top
   "Returns the top n rows from a table in the database."
   [n table]
-  (if (and (int? n) (table-exists? table))
+  (if (and (integer? n) (table-exists? table))
     (j/query db [(str "SELECT TOP " n " * FROM " (s/upper-case (name table)) ";")])))
 
 

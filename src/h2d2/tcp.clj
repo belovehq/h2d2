@@ -28,7 +28,7 @@
 (defn port?
   "check whether p is a valid port"
   [p]
-  (and (int? p) (> p 1023) (< p 65536)))
+  (and (integer? p) (> p 1023) (< p 65536)))
 
 
 (defn need-new-server?
